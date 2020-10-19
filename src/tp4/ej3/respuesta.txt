@@ -1,0 +1,5 @@
+Si hay mas procesos que cuentas, entonces si puede haber deadlocks: Cada proceso bloquea una cuenta y
+debe esperar a que un proceso libere alguna cuenta, lo que no puede pasar.
+Se podria evitar si cada proceso solo puede pedir ambas cuentas al mismo tiempo, no pedir una y despues la
+otra. Tambien se podria evitar si se permite que un proceso le "quite" una cuenta a otro proceso que este
+esperando.

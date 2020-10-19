@@ -1,0 +1,16 @@
+1) Hay mucho uso de un solo nucleo. No se relaciona con la produccion o consumicion porque el uso
+es alto aun con pocos elementos producidos y consumidos
+
+2) Se consume el elemento Null varias veces
+
+3) No siempre
+
+4) El sufren busy waiting y ademas la estructura no esta sincronizada. 2 threads pueden insertar/sacar
+al mismo tiempo y se pierde un valor
+
+5) Para garantizar la visibilidad de las actualizaciones a los elementos, es decir que si un thread
+actualiza la variable queremos que se haga en memoria principal asi todos los threads pueden ver el
+cambio. Si se elimina el programa se cuelga, aunque no se detectan deadlocks. Supongo que se cuelga
+porque la actualizacion se hace en la cache de la CPU y los otros threads piensan que esta vacio.
+
+

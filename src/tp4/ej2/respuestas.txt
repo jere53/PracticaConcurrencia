@@ -1,0 +1,7 @@
+  a) Para n < 6 el sistema esta libre de deadlocks, ya que no se puede dar la condicion de espera
+  circular con menos de 6 procesos. Para n >= 6 si puede haber espera circular. Si 6 procesos toman
+  1 drive cada uno, entonces todos esos procesos deben esperar a que se libere un drive, lo que solo
+  puede pasar si uno de esos procesos terminara.
+
+  b) El sistema esta en un estado seguro, ya que no se cumple la condicion de espera circular. Siempre
+  hay suficientes recursos para que al menos uno de los procesos pueda finalizar.

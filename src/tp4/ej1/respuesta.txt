@@ -1,0 +1,29 @@
+Un conjunto de procesos esta en un estado de deadlock si todos los procesos del conjunto estan
+esperando a un evento que solo puede ser causado por otro proceso del conjunto. En otras palabras,
+cuando los procesos estan esperando algo que solo puede pasar si dejan de esperar. La contradiccion
+hace que los procesos esperen indefinidamente.
+
+Para que exista la posibilidad de deadlocks, se deben cumplir 4 condiciones simultaneamente:
+    * Exclusion Mutua: Al menos un recurso debe estar tomado en modo no-compartido. Es decir, que
+    solo un proceso a la vez puede usar el recurso. Si otro proceso pide el recurso, debe esperar a que
+    el primer proceso lo libere
+
+    * Toma y Espera: Un proceso debe mantener tomado un recurso estar esperando para tomar otros recursos
+    que estan tomados por otros procesos
+
+    * No Desalojo: Los recursos no pueden ser desalojados. Es decir, un recurso solo puede ser liberado
+    volubtariamente por el proceso que lo tiene reservado, despues de que ese proceso haya finalizado su
+    tarea
+
+    * Espera Circular: Debe existir un conjunto {P0, P1,...Pn} de procesos en estado de espera de manera
+    tal que P0 esta esperando un recurso reservado por P1, P1 esta esperando un proceso reservado por P2,
+    ..., Pn-1 esta esperando un recurso reservado por Pn, y Pn esta esperando un recurso reservado por P0
+
+Por ejemplo: A principios del siglo XX se paso una ley en Kansas que leia: "When two trains approach each other at
+a crossing, both shall come to a full stop and neither shall start up again until the other has gone."
+    * Exclusion Mutua: Cada tren toma una via del cruce, no puede haber 2 trenes en una via.
+    * Toma y Espera: Cada tren esta en su via del cruce, y debe esperar a que el otro tren pase. Es decir,
+    esperar a que el otro tren libere su via.
+    * No Desalojo: No se puede sacar al tren de su via, solo se libera cuando el tren pase por el cruce.
+    * Espera circular: El tren T0 esta esperando a que el tren T1 libere su via, y el tren T1 esta
+    esperando a que el tren T0 libere su via.
