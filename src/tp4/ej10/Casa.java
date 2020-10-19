@@ -11,10 +11,9 @@ public class Casa {
     public void tratarDeSentarse() {
         try {
             mutex.acquire(); //forzamos a que un enano le avise a blancanieves ni bien se sienta para evitar deadlocks
-            if (silla.tryAcquire()) {
-                enanoSentado.release();
-                System.out.println("el enano " + Thread.currentThread().getId() + " se sento y le aviso a blancanieves");
-            }
+            silla.acquire();
+            enanoSentado.release();
+            System.out.println("el enano " + Thread.currentThread().getId() + " se sento y le aviso a blancanieves");
             mutex.release();
         } catch (InterruptedException e) {
             e.printStackTrace();
