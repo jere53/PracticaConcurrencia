@@ -1,3 +1,5 @@
+package Parcial2020;
+
 public class Coche implements Runnable {
     private Parque parque;
 

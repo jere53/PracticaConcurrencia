@@ -1,3 +1,5 @@
+package Parcial2020;
+
 public class Visitante implements Runnable{
     private Parque parque;
     private int id;
